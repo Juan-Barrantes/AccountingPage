@@ -46,6 +46,7 @@ input{
 }
 .nav-menu-right{
     align-items: center;
+    z-index: 50;
 }
 .nav-brand{
     width: 50px;    
@@ -66,9 +67,26 @@ input{
     box-shadow: 0.5px 0.5px 1px rgb(179, 179, 179);
     margin-top: -3px;
 }
-.nav-main ul.nav-menu{
+.nav-main ul.nav-menu-left{
     flex: 1;
     margin-left: 20px;
+}
+.menu-btn{
+    position: absolute;
+    cursor: pointer;
+    top: 5px;
+    left: 15px;
+    /* display: none; */
+    background-color: rgb(228, 228, 228);
+    padding: 10px;
+    border-radius: 50%;
+    height: 45px; width: 45px;
+    position: fixed;
+}
+.menu-btn i{
+    position: relative; top: -8px; left: 1px;
+    z-index: 50;
+    /* display: none; */
 }
 
 /*showcase*/
@@ -137,7 +155,7 @@ hr{
 
 /* baner*/
 .cards-banner-one{
-    
+    z-index: 1;
     height: 450px;
 }
 .cards-banner-one .img{
@@ -272,37 +290,87 @@ footer{
 } */
 
 @media screen and (max-width: 710px){
+    .menu-btn{
+        display: block;
+    }
     .nav-main{
-        position: absolute;
+        position: fixed;
     }
     .nav-main ul.nav-menu-left{
         display: block;
         position: absolute;
         top: 0;
         left: 0;
-        background-color: #2f364098;
-        font-size: medium;
+        background-color: #2f3640;
+        width: 50%;
         height: 100%;
+        border-right: #ccc 1px solid;
+        opacity: 0.9;
+        padding: 30px;
+        transform: translateX(-500px);
+        transition: transform 0.5s ease-in-out;
+
+        font-size: medium;        
         border: 1px solid red;
         font-size: 25px;
     }
+    .nav-main ul.nav-menu-left li{
+        padding: 20px;
+        
+        font-size: 14px;
+    }
+    .nav-main ul.nav-menu-left li:last-child{
+        border-bottom: 0;
+    }
     .nav-menu-right{
-        position: fixed;       
-    }
-    .nav-menu-right div{
-        height: 30px;
+        cursor: pointer;
+        /* padding: 10px; */
+        border-radius: 50%;
+        height: 45px; width: 45px;
+        padding: 15px;
+        position: fixed;
+        right: 20px;
+        top: 20px;
+        z-index: 50;  
         margin-left: 420px;
-        margin-top: -15px;        
-        background-color: blue;
+        margin-top: -15px;
     }
-    input{ 
-       
+   
+    .nav-menu-right input{
+        display: none;
+        position: relative;
+        right: 190px; top: -12px;
+        border-radius: 15px;text-align: start;padding: 15px;
+    }
+    .nav-menu-right i{
+        padding: 5px; 
+        margin: 5px;
+        position: relative;
+        top: -12px;right: 13px;
         
-        
+    }
+    .nav-main ul.nav-menu-left .show {
+        transform: translateX(-20px);
+      }
+    
+      .nav-main ul.nav-menu-right {
+        margin-right: 50px;
+      }
+
+
+
+/*-----------------*/
+  
+   
+    input{
+        position: relative;
+        top: -6px;
     }
     .showcase{
         height: 500px;
     }
+/*--------------------*/
+
 
     .news-cards{
         grid-template-columns: repeat(2,1fr);
