@@ -82,6 +82,7 @@ input{
     border-radius: 50%;
     height: 45px; width: 45px;
     position: fixed;
+    
 }
 .menu-btn i{
     position: relative; top: -8px; left: 1px;
@@ -292,6 +293,7 @@ footer{
 @media screen and (max-width: 710px){
     .menu-btn{
         display: block;
+        z-index: 50;
     }
     .nav-main{
         position: fixed;
@@ -299,28 +301,41 @@ footer{
     .nav-main ul.nav-menu-left{
         display: block;
         position: absolute;
-        top: 0;
-        left: 0;
+        top: 25px;
+        left: -11px;
         background-color: #2f3640;
         width: 50%;
         height: 100%;
         border-right: #ccc 1px solid;
         opacity: 0.9;
-        padding: 30px;
+        /* padding: 30px; */
         transform: translateX(-500px);
         transition: transform 0.5s ease-in-out;
-
+        z-index: 15;
+        color: white;
         font-size: medium;        
-        border: 1px solid red;
+        /* border: 1px solid red; */
         font-size: 25px;
     }
+   
+    .nav-main ul.nav-menu-left.show{
+        transform: translateX(-10px);
+    }
+
     .nav-main ul.nav-menu-left li{
-        padding: 20px;
-        
-        font-size: 14px;
+        padding: 20px;        
+        font-size: 20px;
+        color: white;
+        width: 300px;
+        background-color: rgb(255, 255, 255);
+        color: white; font-weight: bold;
     }
     .nav-main ul.nav-menu-left li:last-child{
         border-bottom: 0;
+    }
+    .nav-main ul.nav-menu-left li:hover{
+        background-color: rgb(179, 179, 179);
+        color: white;
     }
     .nav-menu-right{
         cursor: pointer;
@@ -341,6 +356,10 @@ footer{
         position: relative;
         right: 190px; top: -12px;
         border-radius: 15px;text-align: start;padding: 15px;
+    }
+    .nav-menu-right input.busca{
+        display: inline;
+        transition: 1s;
     }
     .nav-menu-right i{
         padding: 5px; 
